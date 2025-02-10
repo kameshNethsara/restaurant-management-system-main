@@ -1,9 +1,12 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
 import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.UserBO;
 import com.ijse.rms.bo.custom.impl.CustomerBOImpl;
 import com.ijse.rms.bo.custom.impl.UserBOImpl;
+import com.ijse.rms.dao.DAOFactory;
+import com.ijse.rms.dao.custom.MenuItemDAO;
 import com.ijse.rms.dto.CustomerViewDto;
 import com.ijse.rms.entity.Customer;
 import com.ijse.rms.tdm.CustomerTM;
@@ -27,8 +30,8 @@ public class CustomerViewController implements Initializable {
 
    // CustomerViewModel customerModel = new CustomerViewModel();
    // CustomerDAO customerDAO = new CustomerDAOImpl();
-    CustomerBO customerBO = new CustomerBOImpl();
-    UserBO userBO = new UserBOImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.CUSTOMER);
+    UserBO userBO =(UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERS);
 
     @FXML
     private Button btnDelete;

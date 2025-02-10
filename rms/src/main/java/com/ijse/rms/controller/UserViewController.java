@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.UserBO;
 import com.ijse.rms.bo.custom.impl.UserBOImpl;
 import com.ijse.rms.dto.UserViewDto;
@@ -31,7 +33,7 @@ import java.util.ResourceBundle;
 public class UserViewController implements Initializable {
 
    // private final UserViewModel userModel = new UserViewModel();
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERS);
 
     @FXML
     private Label lblUserLoginTimeShow;

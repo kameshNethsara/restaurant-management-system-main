@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.SupplierBO;
 import com.ijse.rms.bo.custom.UserBO;
 import com.ijse.rms.bo.custom.impl.SupplierBOImpl;
@@ -31,8 +33,8 @@ public class SupplierViewController implements Initializable {
 
     //private SupplierViewModel supplierModel = new SupplierViewModel();
 
-    UserBO userBO = new UserBOImpl();
-    SupplierBO supplierBO = new SupplierBOImpl();
+    UserBO userBO =(UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERS);
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getInstance().getBO(BOFactory.BOType.SUPPLIER);
 
     private static final String SUPPLIER_NOT_FOUND_MSG = "No supplier found with ID: ";
     private static final String ERROR_TITLE = "Error";

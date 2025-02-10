@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.InventoryItemBO;
 import com.ijse.rms.bo.custom.impl.InventoryItemBOImpl;
 import com.ijse.rms.dto.InventoryItemDto;
@@ -22,7 +24,7 @@ import java.util.ResourceBundle;
 
 public class InventoryItemController implements Initializable {
 
-   InventoryItemBO inventoryItemBO = new InventoryItemBOImpl();
+   InventoryItemBO inventoryItemBO = (InventoryItemBO) BOFactory.getInstance().getBO(BOFactory.BOType.INVENTORY);
 
     @FXML
     private ChoiceBox<String> ChoiseBoxInventoryItemUnit;

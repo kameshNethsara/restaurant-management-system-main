@@ -1,5 +1,6 @@
 package com.ijse.rms.bo.custom;
 
+import com.ijse.rms.bo.SuperBO;
 import com.ijse.rms.dao.custom.MenuItemDAO;
 import com.ijse.rms.dto.InventoryItemDto;
 import com.ijse.rms.dto.MenuItemDto;
@@ -10,7 +11,7 @@ import com.ijse.rms.entity.MenuItemIngredent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface MenuBO {
+public interface MenuBO extends SuperBO {
 
     //public boolean saveMenuItemIngredents(MenuItemIngredentsDto menuItemIngredentsDto) throws SQLException;
     public boolean saveMenuItemIngredents(double quantityNeeded, String menuItemID, String inventoryItemID) throws SQLException;

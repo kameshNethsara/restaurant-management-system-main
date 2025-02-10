@@ -22,7 +22,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 //    OrderItemDAO orderItemDAO = new OrderItemDAOImpl();
 //    CustomerDAO customerDAO = new CustomerDAOImpl();
 
-    MenuItemDAO menuItemDAO = (MenuItemDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.MENU_ITEM);;
+    MenuItemDAO menuItemDAO = (MenuItemDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.MENU_ITEM);
     InventoryItemDAO inventoryItemDAO = (InventoryItemDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.INVENTORY);
     OrderDAO orderDAO = (OrderDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.ORDERS);
     PaymentDAO paymentDAO =(PaymentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.PAYMENTS);

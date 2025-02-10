@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.TableBO;
 import com.ijse.rms.bo.custom.impl.TableBOImpl;
 import com.ijse.rms.dto.TableDto;
@@ -27,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class TableController implements Initializable {
 
-    TableBO tableBO = new TableBOImpl();
+    TableBO tableBO = (TableBO) BOFactory.getInstance().getBO(BOFactory.BOType.TABLE);
 
     @FXML
     private Button btnDelete;

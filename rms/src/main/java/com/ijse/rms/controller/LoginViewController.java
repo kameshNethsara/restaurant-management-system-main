@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.UserBO;
 import com.ijse.rms.bo.custom.impl.UserBOImpl;
 import com.ijse.rms.dao.custom.QuaryDAO;
@@ -36,7 +38,7 @@ public class LoginViewController implements Initializable {
 //    LoginBO loginBO = new LoginBOImpl();
     //QuaryDAOImpl quaryDAO = new QuaryDAOImpl();
     QuaryDAO quaryDAO = new QuaryDAOImpl();
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USERS);
 
     @FXML
     private Pane btnPane;

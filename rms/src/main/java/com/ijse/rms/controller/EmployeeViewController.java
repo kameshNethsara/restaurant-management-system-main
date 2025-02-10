@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.EmployeeBO;
 import com.ijse.rms.bo.custom.impl.EmployeeBOImpl;
 import com.ijse.rms.dto.EmployeeViewDto;
@@ -34,7 +36,7 @@ public class EmployeeViewController implements Initializable {
 
     //EmployeeViewModel employeeModel = new EmployeeViewModel();
     //EmployeeDAO employeeDAO = new EmployeeDAOImpl();
-    EmployeeBO employeeBO = new EmployeeBOImpl();
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getInstance().getBO(BOFactory.BOType.EMPLOYEE);
 
 
     @FXML

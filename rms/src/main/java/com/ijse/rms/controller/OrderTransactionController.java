@@ -1,6 +1,8 @@
 
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.PlaceOrderBO;
 import com.ijse.rms.bo.custom.impl.PlaceOrderBOImpl;
 import com.ijse.rms.dao.custom.*;
@@ -35,9 +37,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class OrderTransactionController implements Initializable {
-
-    CustomerDAO customerBO = new CustomerDAOImpl();
-    OrderDAO orderBO = new OrderDAOImpl();
 
     @FXML
     private Button btnAddMenuItem,btnRemoveMenuItem ,btnDelete, btnPlaceOrder, btnReset, btnSearch, btnSearchMenuItem, btnUpdate, btnCustomerSearch;
@@ -132,7 +131,7 @@ public class OrderTransactionController implements Initializable {
 //    OrderItemDAO orderItemDAO = new OrderItemDAOImpl();
 //    MenuItemDAO menuItemDAO = new MenuItemDAOImpl();
 
-    PlaceOrderBO placeOrderBO = new PlaceOrderBOImpl();
+    PlaceOrderBO placeOrderBO =(PlaceOrderBO) BOFactory.getInstance().getBO(BOFactory.BOType.PLACE_ORDER);
 
     static double totalAmount = 0;
 
