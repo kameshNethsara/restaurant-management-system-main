@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.SupplierBO;
 import com.ijse.rms.bo.custom.impl.SupplierBOImpl;
 import com.ijse.rms.dao.custom.InventoryItemDAO;
@@ -35,9 +37,9 @@ import java.util.ResourceBundle;
 
 public class PurchaseController implements Initializable {
 
-    SupplierBO supplierBO = new SupplierBOImpl();
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getInstance().getBO(BOFactory.BOType.SUPPLIER);
     //bo nemi enne transaction eken danata kamak na... aye balanna
-    InventoryItemDAO inventoryItemDAO = new InventoryItemDAOImpl();
+    InventoryItemDAO inventoryItemDAO = (InventoryItemDAO) BOFactory.getInstance().getBO(BOFactory.BOType.INVENTORY);
     PurchasesDAO purchasesDAO = new PurchasesDAOImpl();
     QuaryDAO quaryDAO = new QuaryDAOImpl();
 

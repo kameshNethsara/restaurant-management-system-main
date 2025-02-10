@@ -1,5 +1,7 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
+import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.InventoryItemBO;
 import com.ijse.rms.bo.custom.MenuBO;
 import com.ijse.rms.bo.custom.impl.InventoryItemBOImpl;
@@ -41,9 +43,9 @@ public class MenuItemController implements Initializable {
 //    MenuItemIngredentDAO menuItemIngredentDAO = new MenuItemIngredentDAOImpl();
 //    InventoryItemDAO inventoryItemDAO = new InventoryItemDAOImpl();
 
-    MenuBO menuBO = new MenuBOImpl();
-    MenuItemIngredentDAO menuItemIngredentDAO;
-    InventoryItemBO inventoryItemBO = new InventoryItemBOImpl();
+    MenuBO menuBO = (MenuBO) BOFactory.getInstance().getBO(BOFactory.BOType.MENU);
+//    MenuItemIngredentDAO menuItemIngredentDAO;
+//    InventoryItemBO inventoryItemBO = new InventoryItemBOImpl();
 
     @FXML
     private Button btnInventorySearch;

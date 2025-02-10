@@ -1,5 +1,6 @@
 package com.ijse.rms.controller;
 
+import com.ijse.rms.bo.BOFactory;
 import com.ijse.rms.bo.custom.CustomerBO;
 import com.ijse.rms.bo.custom.ReservationBO;
 import com.ijse.rms.bo.custom.TableBO;
@@ -44,9 +45,9 @@ public class ReservationController implements Initializable {
 
     private final ObservableList<ReservationTM> reservations = FXCollections.observableArrayList();
     //CustomerDAO customerDAO = new CustomerDAOImpl();
-    CustomerBO customerBO = new CustomerBOImpl();
-    TableBO tableBO = new TableBOImpl();
-    ReservationBO reservationBO = new ReservationBOImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.CUSTOMER);
+    TableBO tableBO = (TableBO) BOFactory.getInstance().getBO(BOFactory.BOType.TABLE);
+    ReservationBO reservationBO =(ReservationBO) BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATIONS);
     QuaryDAO quaryDAO = new QuaryDAOImpl();
     TableAssignmentDAO tableAssignmentDAO = new TableAssignmentDAOImpl();
 
