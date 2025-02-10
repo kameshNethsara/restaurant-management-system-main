@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Group xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.rms.controller.EmployeeViewController">
+    <children>
+        <AnchorPane fx:id="employeeAccountsView" layoutY="1.0" prefHeight="604.0" prefWidth="1020.0">
+            <children>
+                <Label alignment="CENTER" layoutX="2.0" layoutY="-1.0" prefHeight="50.0" prefWidth="1020.0" text="Manage Employees">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Group layoutX="375.0" layoutY="189.0" />
+                <Pane layoutX="1.0" layoutY="553.0" prefHeight="50.0" prefWidth="1020.0" style="-fx-background-color: #EDE6DB;" />
+                <Pane layoutX="1.0" layoutY="-1.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+                <Pane layoutX="971.0" layoutY="-1.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+                <VBox layoutX="51.0" layoutY="66.0" prefHeight="209.0" prefWidth="164.0" spacing="10.0">
+                    <children>
+                        <Label fx:id="lblEmployeeId" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Employee Id">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblEmployeeName" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Name">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblEmployeePosition" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Position">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblEmployeePhone" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Phone">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblHireDate" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Hire Date">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <HBox layoutX="341.0" layoutY="260.0" prefHeight="32.0" prefWidth="572.0" spacing="75.0">
+                    <children>
+                        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #C5705D;" text="Reset" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #800000;" text="Delete" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0B2F9F;" text="Update" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #117554;" text="Save" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <TableView fx:id="tblEmployee" layoutX="61.0" layoutY="306.0" onMouseClicked="#onClickTable" prefHeight="235.0" prefWidth="900.0">
+                    <columns>
+                        <TableColumn fx:id="colEmployeeId" prefWidth="98.66668701171875" text="Employee Id" />
+                        <TableColumn fx:id="colEmployeeName" prefWidth="236.6666717529297" text="Employee Name" />
+                        <TableColumn fx:id="colEmployeePosition" prefWidth="100.66668701171875" text="Position" />
+                        <TableColumn fx:id="colEmployeePhone" prefWidth="132.6666259765625" text="Phone" />
+                        <TableColumn fx:id="colEmployeeEmail" prefWidth="160.66668701171875" text="Email" />
+                        <TableColumn fx:id="colEmployeeHireDate" prefWidth="171.99993896484375" text="Hire Date" />
+                    </columns>
+                </TableView>
+                <Label fx:id="lblEmployeeHireDate" layoutX="229.0" layoutY="226.0" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-color: transparent; -fx-border-width: #0578;" text="1">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtEmployeePhone" layoutX="228.0" layoutY="182.0" prefHeight="30.0" prefWidth="230.0" promptText="07XXXXXXXX" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtEmployeePosition" layoutX="227.0" layoutY="144.0" prefHeight="34.0" prefWidth="230.0" promptText="Job role" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtEmployeeName" layoutX="226.0" layoutY="102.0" prefHeight="34.0" prefWidth="656.0" promptText="Employee Name" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </TextField>
+                <Label fx:id="lblEmployeeEmail" layoutX="519.0" layoutY="185.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Email">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtEmployeeEmail" layoutX="649.0" layoutY="179.0" prefHeight="30.0" prefWidth="230.0" promptText="abc123@gmail.com" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtEmployeeId" layoutX="226.0" layoutY="61.0" prefHeight="34.0" prefWidth="230.0" promptText="Employee Id" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="btnSearch" layoutX="473.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</Group>

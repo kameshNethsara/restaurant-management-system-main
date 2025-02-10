@@ -1,0 +1,211 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+<!--<?import javafx.scene.Group?>-->
+<!--<?import javafx.scene.control.Button?>-->
+<!--<?import javafx.scene.control.Label?>-->
+<!--<?import javafx.scene.control.TableColumn?>-->
+<!--<?import javafx.scene.control.TableView?>-->
+<!--<?import javafx.scene.control.TextField?>-->
+<!--<?import javafx.scene.layout.AnchorPane?>-->
+<!--<?import javafx.scene.layout.HBox?>-->
+<!--<?import javafx.scene.layout.Pane?>-->
+<!--<?import javafx.scene.layout.VBox?>-->
+<!--<?import javafx.scene.text.Font?>-->
+
+<!--<AnchorPane prefHeight="604.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.rms.controller.PurchaseController">-->
+<!--    <children>-->
+<!--        <Label alignment="CENTER" layoutX="2.0" layoutY="1.0" prefHeight="50.0" prefWidth="1020.0" text="Purchase Items">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="30.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+<!--        <Group layoutX="375.0" layoutY="190.0" />-->
+<!--        <Pane layoutX="1.0" layoutY="554.0" prefHeight="50.0" prefWidth="1020.0" style="-fx-background-color: #EDE6DB;" />-->
+<!--        <Pane layoutX="1.0" layoutY="1.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />-->
+<!--        <Pane layoutX="971.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />-->
+<!--        <VBox layoutX="51.0" layoutY="49.0" prefHeight="209.0" prefWidth="164.0" spacing="10.0">-->
+<!--            <children>-->
+<!--                <Label fx:id="lblSupplierTele" prefHeight="30.0" prefWidth="181.0" style="-fx-background-color: #EDE6DB;" text="Supplier Tele">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblSupplierId" prefHeight="30.0" prefWidth="188.0" style="-fx-background-color: #EDE6DB;" text="Supplier Id">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseID" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Purchase ID">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseTotalPrice" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #EDE6DB;" text="Total Price">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblDate" prefHeight="30.0" prefWidth="172.0" style="-fx-background-color: #EDE6DB;" text="Date">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--            </children>-->
+<!--        </VBox>-->
+<!--        <TableView fx:id="tblPurchaseItem" layoutX="61.0" layoutY="296.0" onMouseClicked="#onClickTable" prefHeight="215.0" prefWidth="900.0">-->
+<!--            <columns>-->
+<!--                <TableColumn fx:id="colSupplierId" prefWidth="105.0" text="Supplier Id" />-->
+<!--                <TableColumn fx:id="colInventoryItemId" prefWidth="105.0" text="Inventory ItemId" />-->
+<!--                <TableColumn fx:id="colInventoryItemName" prefWidth="193.9998779296875" text="Inventory Item Name" />-->
+<!--                <TableColumn fx:id="colPurchaseId" prefWidth="82.66677856445312" text="Purchase Id" />-->
+<!--                <TableColumn fx:id="colPurchaseItemStatus" prefWidth="130.0" text="Status" />-->
+<!--                <TableColumn fx:id="colPurchaseItemQty" prefWidth="90.0" text="Quantity" />-->
+<!--                <TableColumn fx:id="colPurchaseItemPrice" prefWidth="90.0" text="Price" />-->
+<!--                <TableColumn fx:id="colPurchaseTotalPrice" prefWidth="100.66668701171875" text="Total Price" />-->
+<!--            </columns>-->
+<!--        </TableView>-->
+<!--        <TextField fx:id="txtPurchaseID" layoutX="226.0" layoutY="124.0" prefHeight="30.0" prefWidth="193.0" promptText="Purchase ID" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtPurchaseTotalPrice" layoutX="226.0" layoutY="165.0" prefHeight="34.0" prefWidth="193.0" promptText="0.00" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtSupplierId" layoutX="226.0" layoutY="85.0" prefHeight="34.0" prefWidth="193.0" promptText="Supplier Id" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtSupplierTele" layoutX="226.0" layoutY="44.0" prefHeight="34.0" prefWidth="193.0" promptText="Supplier Mobile" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <Label fx:id="lblTime" layoutX="858.0" prefHeight="50.0" prefWidth="113.0">-->
+<!--            <font>-->
+<!--                <Font name="Calibri" size="30.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+<!--        <TextField fx:id="txtPurchaseItemId" layoutX="693.0" layoutY="124.0" prefHeight="34.0" prefWidth="193.0" promptText="Purchase ItemID" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <Button fx:id="btnSupplierSearch" layoutX="434.0" layoutY="52.0" mnemonicParsing="false" onAction="#btnSupplierSearchOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </Button>-->
+<!--        <VBox layoutX="517.0" layoutY="49.0" prefHeight="209.0" prefWidth="164.0" spacing="10.0">-->
+<!--            <children>-->
+<!--                <Label fx:id="lblInventoryItemName" prefHeight="30.0" prefWidth="181.0" style="-fx-background-color: #EDE6DB;" text="Inven_ItemName">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblInventoryItemId" prefHeight="30.0" prefWidth="188.0" style="-fx-background-color: #EDE6DB;" text="Inventory ItemID">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseItemId" prefHeight="30.0" prefWidth="181.0" style="-fx-background-color: #EDE6DB;" text="Purchase ItemID">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseItemPrice" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Price">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseItemQty" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Quantity">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--                <Label fx:id="lblPurchaseItemStatus" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Status">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="20.0" />-->
+<!--                    </font>-->
+<!--                </Label>-->
+<!--            </children>-->
+<!--        </VBox>-->
+<!--        <Label fx:id="lblDateShow" layoutX="229.0" layoutY="207.0" prefHeight="34.0" prefWidth="193.0" text="XXXX-XX-XX">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+<!--        <TextField fx:id="txtInventoryItemId" layoutX="692.0" layoutY="84.0" prefHeight="34.0" prefWidth="193.0" promptText="Inventory Item Id" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <Button fx:id="btnInventorySearch" layoutX="897.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnInventorySearchOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </Button>-->
+<!--        <TextField fx:id="txtInventoryItemName" layoutX="692.0" layoutY="44.0" prefHeight="34.0" prefWidth="193.0" promptText="Inventory Item Name" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtPurchaseItemStatus" layoutX="694.0" layoutY="245.0" prefHeight="34.0" prefWidth="193.0" promptText="Recived/Pending/Cancelled" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtPurchaseItemQty" layoutX="693.0" layoutY="205.0" prefHeight="34.0" prefWidth="193.0" promptText="0" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <TextField fx:id="txtPurchaseItemPrice" layoutX="693.0" layoutY="165.0" prefHeight="34.0" prefWidth="193.0" promptText="00.00" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </TextField>-->
+<!--        <HBox layoutX="64.0" layoutY="529.0" prefHeight="32.0" prefWidth="415.0" spacing="75.0">-->
+<!--            <children>-->
+<!--                <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #C5705D;" text="Reset" textFill="WHITE">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="15.0" />-->
+<!--                    </font>-->
+<!--                </Button>-->
+<!--                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #800000;" text="Delete" textFill="WHITE">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="15.0" />-->
+<!--                    </font>-->
+<!--                </Button>-->
+<!--                <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0B2F9F;" text="Update" textFill="WHITE">-->
+<!--                    <font>-->
+<!--                        <Font name="System Bold" size="15.0" />-->
+<!--                    </font>-->
+<!--                </Button>-->
+<!--            </children>-->
+<!--        </HBox>-->
+<!--        <Label fx:id="lblTotalAmountShow" layoutX="675.0" layoutY="531.0" prefHeight="30.0" prefWidth="149.0" style="-fx-background-color: #EDE6DB;" text="00.00">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="20.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+<!--        <Button fx:id="btnPurchase" layoutX="845.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnPurchaseOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #2ecc71;" text="Purchase" textFill="WHITE">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </Button>-->
+<!--        <Label fx:id="lblTotalAmount" layoutX="506.0" layoutY="531.0" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: #EDE6DB;" text="Total Amount">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="20.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+<!--        <Button fx:id="btnAddPurchaseItem" layoutX="896.0" layoutY="202.0" mnemonicParsing="false" onAction="#btnAddPurchaseItemOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30; -fx-background-color: #3498db;" text="Add" textFill="WHITE">-->
+<!--            <font>-->
+<!--                <Font name="System Bold" size="15.0" />-->
+<!--            </font>-->
+<!--        </Button>-->
+<!--    </children>-->
+<!--</AnchorPane>-->

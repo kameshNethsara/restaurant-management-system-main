@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Group xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.rms.controller.PurchaseItemsController">
+   <children>
+      <AnchorPane fx:id="btnPurchaseItemsView" layoutY="1.0" prefHeight="604.0" prefWidth="1020.0">
+         <children>
+            <Label alignment="CENTER" layoutX="2.0" prefHeight="50.0" prefWidth="1020.0" text="Purchase Items">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Group layoutX="375.0" layoutY="189.0" />
+            <Pane layoutX="1.0" layoutY="553.0" prefHeight="50.0" prefWidth="1020.0" style="-fx-background-color: #EDE6DB;" />
+            <Pane layoutX="1.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+            <Pane layoutX="971.0" layoutY="-1.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+            <VBox layoutX="51.0" layoutY="48.0" prefHeight="209.0" prefWidth="164.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblPurchaseItemID" prefHeight="30.0" prefWidth="181.0" style="-fx-background-color: #EDE6DB;" text="Purchase ItemID">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblInventoryItemID" prefHeight="30.0" prefWidth="188.0" style="-fx-background-color: #EDE6DB;" text="Inventory ItemID">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPurchaseID" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Purchase ID">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPurchaseItemPrice" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Price">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPurchaseItemQty" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Quantity">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox layoutX="341.0" layoutY="254.0" prefHeight="32.0" prefWidth="572.0" spacing="75.0">
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #C5705D;" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #800000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0B2F9F;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #117554;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tblPurchaseItem" layoutX="61.0" layoutY="306.0" onMouseClicked="#onClickTable" prefHeight="235.0" prefWidth="900.0">
+               <columns>
+                  <TableColumn fx:id="colPurchaseItemId" prefWidth="150.0" text="Purchase ItemId" />
+                  <TableColumn fx:id="colInventoryItemId" prefWidth="150.0" text="Inventory ItemId" />
+                  <TableColumn fx:id="colPurchaseId" prefWidth="150.0" text="Purchase Id" />
+                  <TableColumn fx:id="colPurchaseItemPrice" prefWidth="150.0" text="Price" />
+                  <TableColumn fx:id="colPurchaseItemQty" minWidth="150.0" prefWidth="96.0" text="Quantity" />
+                  <TableColumn fx:id="colPurchaseItemStatus" prefWidth="150.0" text="Status" />
+               </columns>
+            </TableView>
+            <TextField fx:id="txtPurchaseID" layoutX="226.0" layoutY="123.0" prefHeight="30.0" prefWidth="193.0" promptText="Purchase ID" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPurchaseItemPrice" layoutX="226.0" layoutY="164.0" prefHeight="34.0" prefWidth="193.0" promptText="0.00" style="-fx-background-color: transpare; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0578;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtInventoryItemID" layoutX="226.0" layoutY="84.0" prefHeight="34.0" prefWidth="193.0" promptText="Inventory ItemID" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPurchaseItemID" layoutX="226.0" layoutY="43.0" prefHeight="34.0" prefWidth="193.0" promptText="Purchase ItemID" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblTime" layoutX="858.0" layoutY="-1.0" prefHeight="50.0" prefWidth="113.0">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPurchaseItemQty" layoutX="226.0" layoutY="202.0" prefHeight="34.0" prefWidth="193.0" promptText="0" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblPurchaseItemStatus" layoutX="517.0" layoutY="125.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Status">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPurchaseItemStatus" layoutX="646.0" layoutY="121.0" prefHeight="34.0" prefWidth="230.0" promptText="Recived/Pending/Cancelled" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnSearch" layoutX="434.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</Group>

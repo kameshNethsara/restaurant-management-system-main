@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<AnchorPane fx:id="tableAnchorePane" prefHeight="604.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.rms.controller.TableController">
+   <children>
+      <Group layoutX="21.0" layoutY="17.0">
+         <children>
+            <Label alignment="CENTER" layoutX="-18.0" layoutY="-18.0" prefHeight="50.0" prefWidth="1020.0" text="Tables">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Group layoutX="375.0" layoutY="190.0" />
+            <Pane layoutX="-19.0" layoutY="536.0" prefHeight="50.0" prefWidth="1020.0" style="-fx-background-color: #EDE6DB;" />
+            <Pane layoutX="952.0" layoutY="-18.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+            <HBox layoutX="341.0" layoutY="201.0" prefHeight="32.0" prefWidth="572.0" spacing="75.0">
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #C5705D;" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #800000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0B2F9F;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #117554;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tblTable" layoutX="40.0" layoutY="260.0" onMouseClicked="#onClickTable" prefHeight="264.0" prefWidth="900.0">
+               <columns>
+                  <TableColumn fx:id="colTableId" prefWidth="180.0" text="Table Id" />
+                  <TableColumn fx:id="colTableNumber" prefWidth="180.0" text="Table Number" />
+                  <TableColumn fx:id="colTableCapacity" prefWidth="180.0" text="Table Capacity" />
+                  <TableColumn fx:id="colTableLocation" prefWidth="180.0" text="Table Location" />
+                  <TableColumn fx:id="colTableStatus" prefWidth="180.0" text="Status" />
+               </columns>
+            </TableView>
+            <TextField fx:id="txtTableCapacity" layoutX="226.0" layoutY="103.0" prefHeight="34.0" prefWidth="230.0" promptText="Table Capacity" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTableId" layoutX="226.0" layoutY="62.0" prefHeight="34.0" prefWidth="230.0" promptText="Table Id" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSearch" layoutX="464.0" layoutY="65.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <HBox layoutX="826.0" layoutY="-8.0" prefHeight="43.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <Pane layoutX="-20.0" layoutY="-17.0" prefHeight="604.0" prefWidth="50.0" style="-fx-background-color: #EDE6DB;" />
+<!--            <ChoiceBox fx:id="choiseBoxTableStatus" layoutX="229.0" layoutY="146.0" prefHeight="30.0" prefWidth="165.0" />-->
+            <ChoiceBox fx:id="choiseBoxTableStatus" layoutX="229.0" layoutY="146.0" prefHeight="30.0" prefWidth="165.0" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Available" />
+                     <String fx:value="Occupied" />
+                     <String fx:value="Reserved" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <Button fx:id="btnResavation" layoutX="738.0" layoutY="-7.0" mnemonicParsing="false" onAction="#navigateToResavation" onMouseEntered="#btnResavationColorChange" onMouseExited="#btnResavationColorChangeBack" prefHeight="40.0" prefWidth="210.0" style="-fx-background-radius: 20;" stylesheets="@../styleSheets/backGroundTransparent.css" text="Booking Resavations">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnSearchByStatus" layoutX="464.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnSearchByStatusOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 30;" text="Search" textFill="#187006">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <VBox layoutX="57.0" layoutY="84.0" prefHeight="127.0" prefWidth="164.0" spacing="10.0">
+         <children>
+            <Label fx:id="lblTableId" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #EDE6DB;" text="Table Id">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTableCapacity" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #EDE6DB;" text="Table Capacity">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTableStatus" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #EDE6DB;" text="Status">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <TextField fx:id="txtTableLocation" layoutX="736.0" layoutY="122.0" prefHeight="34.0" prefWidth="230.0" promptText="Table Location" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTableNumber" layoutX="736.0" layoutY="81.0" prefHeight="34.0" prefWidth="230.0" promptText="Table Number" style="-fx-background-color: transpare; -fx-border-color: #0578; -fx-border-width: 0px 0px 2px 0px;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <VBox layoutX="567.0" layoutY="85.0" prefHeight="92.0" prefWidth="164.0" spacing="10.0">
+         <children>
+            <Label fx:id="lblTableNumber" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #EDE6DB;" text="Table Number">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTableLocation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #EDE6DB;" text="Table Location">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
